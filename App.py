@@ -186,6 +186,9 @@ def main():
             st.write(f"*Time*: {df['Timestamps'].iloc[len(df)-i-1]}")
             st.write(f"*User*: {df['User_Input'].iloc[len(df)-i-1]}")
             st.write(f"*Response*: {df['Response'].iloc[len(df)-i-1]}")
+    
+     st.write("*Developed by Ayon and Sanchi*")
+
                         
 
 
