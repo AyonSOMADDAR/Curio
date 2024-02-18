@@ -139,6 +139,9 @@ def user_input(user_question, name,uid, answers):
     return answers
     
 def main():
+    with st.sidebar:
+        st.write("*Developed by Ayon and Sanchi*")
+        
     st.set_page_config("Chat PDF")
     st.header("Curio \n*Learn your way, At your pace*")
     
@@ -187,7 +190,7 @@ def main():
             st.write(f"*User*: {df['User_Input'].iloc[len(df)-i-1]}")
             st.write(f"*Response*: {df['Response'].iloc[len(df)-i-1]}")
     
-     st.write("*Developed by Ayon and Sanchi*")
+     
 
                         
 
