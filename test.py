@@ -1,32 +1,33 @@
 import streamlit as st
+from streamlit_webrtc import webrtc_streamer, VideoProcessorBase, WebRtcMode
+import cv2
 
-# Define the set of questions and their corresponding options
-questions = [
-    "What is the capital of France?\n Who wrote 'To Kill a Mockingbird'?\n What is the chemical symbol for water? \nWhat is the largest planet in our solar system? \nWho painted the Mona Lisa?"
-]
+# Define a video processor class to capture frames
+class ImageProcessor(VideoProcessorBase):
+    def __init__(self):
+        super().__init__()
+        self.latest_frame = None
 
-options = [
-    ["Paris", "London", "Berlin", "Rome"],
-    ["Harper Lee", "J.K. Rowling", "Charles Dickens", "Ernest Hemingway"],
-    ["H2O", "CO2", "NaCl", "O2"],
-    ["Jupiter", "Saturn", "Mars", "Earth"],
-    ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo"]
-]
+    def recv(self, frame):
+        self.latest_frame = frame.to_ndarray(format="bgr24")
 
-# Display the questions and collect user answers
 def main():
-    st.title("Multiple Choice Quiz")
-    user_answers = {}
-    for i, question in enumerate(questions):
-        st.subheader(f"Question {i+1}: {question}")
-        for j, option in enumerate(options[i]):
-            user_answer = st.radio(f"Option {j+1}", options=options[i], key=f"{i}_{j}")
-            if user_answer:
-                user_answers[f"Question {i+1}"] = user_answer
+    st.title("Streamlit Camera App")
 
-    st.write("Your answers:")
-    for question, answer in user_answers.items():
-        st.write(f"{question}: {answer}")
+    # Display the live camera feed
+    webrtc_ctx = webrtc_streamer(
+        key="example",
+        mode=WebRtcMode.SENDRECV,
+        video_processor_factory=ImageProcessor,
+        async_processing=True,
+    )
+
+    # Display captured image when the button is clicked
+    if webrtc_ctx.video_processor:
+        if st.button("Capture Image"):
+            captured_image = webrtc_ctx.video_processor.latest_frame
+            if captured_image is not None:
+                st.image(captured_image, channels="BGR", caption="Captured Image")
 
 if __name__ == "__main__":
     main()

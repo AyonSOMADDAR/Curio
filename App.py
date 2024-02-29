@@ -13,6 +13,8 @@ from dotenv import load_dotenv
 from datetime import datetime
 from PIL import Image
 
+
+
 load_dotenv()
 os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -139,7 +141,10 @@ def user_input(user_question, name,uid, answers):
     return answers
     
 def main():
-    st.set_page_config("Chat PDF")
+    with st.sidebar:
+        st.write("*Developed by Ayon and Sanchi*")
+        
+    # st.set_page_config("Chat PDF")
     st.header("Curio \n*Learn your way, At your pace*")
     
     with st.sidebar:
@@ -186,8 +191,6 @@ def main():
             st.write(f"*Time*: {df['Timestamps'].iloc[len(df)-i-1]}")
             st.write(f"*User*: {df['User_Input'].iloc[len(df)-i-1]}")
             st.write(f"*Response*: {df['Response'].iloc[len(df)-i-1]}")
-                        
-
-
+    
 if __name__ == "__main__":
     main()
