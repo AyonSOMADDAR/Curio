@@ -6,7 +6,7 @@
 
 **Problem Statement Title:** Analysis on ChatGPT. 
 
-**Objec ve:**  Your  task  is  to  create  a  genera ve  AI-powered  applica on  using OpenAI() API that dynamically generates personalized educa onal content. This content ![ref1] should  not  only  align  with  the  curriculum  but  also  adapt  to  each student's learning progress, areas of interest, and preferred learning modali es (text, visual, etc.). 
+**Objec ve:**  Your  task  is  to  create  a  genera ve  AI-powered  applica on  using OpenAI() API that dynamically generates personalized educa onal content. This content  should  not  only  align  with  the  curriculum  but  also  adapt  to  each student's learning progress, areas of interest, and preferred learning modali es (text, visual, etc.). 
 
 **Deliverables:**  
 
@@ -22,7 +22,7 @@ We  propose  **“Curio”**,  an  innova ve  AI-Powered  applica on  u lizing  
 
 Our basic architectural implementa on involves a Langchain framework implemen ng the Gemini Pro by Google as a large language model, Faiss by Meta as a vectorstore and other fine tuning methodologies to implement personalisa on and achieve be er results. 
 
-Here is the architectural framework: ![ref1]
+Here is the architectural framework: 
 
 ![](Aspose.Words.ce81b54e-1a07-4ff2-a993-688ff6fbd6a2.002.jpeg)
 
@@ -30,7 +30,7 @@ As men oned in the image above, we u lize extensive finetuning techniques like *
 
 ![](Aspose.Words.ce81b54e-1a07-4ff2-a993-688ff6fbd6a2.003.png)
 
-**Personaliza on architecture** along with implementa on design: ![ref1]
+**Personaliza on architecture** along with implementa on design: 
 
 1. **Profile Playground:** 
 - The bot takes survey about the student and fine tunes itself as per the input received.**  
@@ -45,7 +45,7 @@ As men oned in the image above, we u lize extensive finetuning techniques like *
 
 ![](Aspose.Words.ce81b54e-1a07-4ff2-a993-688ff6fbd6a2.005.jpeg)
 
-3. **Regenerate Op ons: ![ref1]**
+3. **Regenerate Op ons: **
 
    This helps to take user feedback from the users about the produced data. 
 
