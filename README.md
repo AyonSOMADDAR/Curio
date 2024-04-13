@@ -42,6 +42,5 @@ As men oned in the image above, we u lize extensive finetuning techniques like *
 
 Project GitHub Link:[ h ps://github.com/AyonSOMADDAR/Curio  ](https://github.com/AyonSOMADDAR/Curio)![ref1]![](Aspose.Words.ce81b54e-1a07-4ff2-a993-688ff6fbd6a2.007.jpeg)
 
-[ref1]: Aspose.Words.ce81b54e-1a07-4ff2-a993-688ff6fbd6a2.001.jpeg
 
 Check out our bot at : <a href="https://curiobot.streamlit.app/">Curio</a>
