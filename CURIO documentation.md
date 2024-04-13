@@ -1,22 +1,7 @@
 ﻿**CURIO: Learn your way, At your pace.** 
 
-**Problem Statement:** 
 
-**PS-ID:** GAPS-07 
-
-**Problem Statement Title:** Analysis on ChatGPT. 
-
-**Objec ve:**  Your  task  is  to  create  a  genera ve  AI-powered  applica on  using OpenAI() API that dynamically generates personalized educa onal content. This content  should  not  only  align  with  the  curriculum  but  also  adapt  to  each student's learning progress, areas of interest, and preferred learning modali es (text, visual, etc.). 
-
-**Deliverables:**  
-
-- A fully func onal prototype that integrates Gemini Pro's API for real- me, personalized content genera on. 
-- Documenta on  detailing  the  system  architecture,  Gemini  Pro  API integra on, personaliza on logic, and user interface design. 
-- A  presenta on  that  demonstrates  the  applica on's  func onality, highlights  its  innova ve  features,  and  discusses  poten al  impacts  on personalized e-learning. 
-
-**Proposed System:** 
-
-We  propose  **“Curio”**,  an  innova ve  AI-Powered  applica on  u lizing  **Large Language  Models(LLM)**  like  **Gemini  Pro**  to  reshape  personalized  E-learning. Integra ng advanced **Natural Language Processing (NLP)** harnessing the power of **Langchain** framework, Curio dynamically and seman cally searches through the educa onal content of the students and answers promptly. As an adap ve applica on, Curio answers as per student’s individual details and personalizes itself as per students learning capabili es.  By tapping into **Gemini Pro's API**, it generates real- me, curriculum-aligned materials that adapt to each student's interests, and preferred learning styles. In addi on to these,Curio implements **Reinforcement  Learning  with  Human  Feedback  (RLHF),**  enhancing  learning outcomes by itera vely refining content based on user input for the feedback using a **Reward Model** and **Proximal Policy Op miza on (PPO)** . With a user- friendly  interface  and  scalable  architecture,  Curio  promises  to  revolu onize educa onal experiences, making personalized learning accessible and effec ve for students worldwide. 
+We  propose  **“Curio”**,  an  innovative  AI-Powered  application  utilizing  **Large Language  Models(LLM)**  like  **Gemini  Pro**  to  reshape  personalized  E-learning. Integra ng advanced **Natural Language Processing (NLP)** harnessing the power of **Langchain** framework, Curio dynamically and seman cally searches through the educa onal content of the students and answers promptly. As an adap ve applica on, Curio answers as per student’s individual details and personalizes itself as per students learning capabili es.  By tapping into **Gemini Pro's API**, it generates real- me, curriculum-aligned materials that adapt to each student's interests, and preferred learning styles. In addi on to these,Curio implements **Reinforcement  Learning  with  Human  Feedback  (RLHF),**  enhancing  learning outcomes by itera vely refining content based on user input for the feedback using a **Reward Model** and **Proximal Policy Op miza on (PPO)** . With a user- friendly  interface  and  scalable  architecture,  Curio  promises  to  revolu onize educa onal experiences, making personalized learning accessible and effec ve for students worldwide. 
 
 **Architecture:** 
 
