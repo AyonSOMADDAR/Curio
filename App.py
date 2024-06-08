@@ -43,7 +43,7 @@ def get_text_chunks(text):
 
 def get_vector_store(text_chunks):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    vector_store = FAISS.from_texts(text_chunks, embedding=embeddings)
+    vector_store = FAISS.from_texts(text_chunks, embedding=embeddings ,  allow_dangerous_deserialization=True)
     vector_store.save_local("faiss_index")
 
 def get_conversational_chain():
@@ -73,7 +73,7 @@ def take_quiz(name,uid):
     df.columns=['Timestamps','Name','UID','User_Input','Response']
     df=df[df.UID==uid]
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    new_db = FAISS.load_local("faiss_index", embeddings)
+    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
     history=df['User_Input'].tolist()+df['Response'].tolist()
     docs = new_db.similarity_search(history)
     result = chain({"input_documents": docs, "question": question_prompt, "name": name, "AboutStudent": []}, return_only_outputs=True)
@@ -121,7 +121,7 @@ def student_info(name):
 def user_input(user_question, name,uid, answers):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    new_db = FAISS.load_local("faiss_index", embeddings)
+    new_db = FAISS.load_local("faiss_index", embeddings,  allow_dangerous_deserialization=True)
     docs = new_db.similarity_search(user_question)
     chain = get_conversational_chain()
     response = chain({"input_documents": docs, "question": user_question, "name": name, "AboutStudent": answers}, return_only_outputs=True)
@@ -139,10 +139,11 @@ def user_input(user_question, name,uid, answers):
     return answers
     
 def main():
+    st.set_page_config("Chat PDF")
     with st.sidebar:
         st.write("*Developed by Ayon and Sanchi*")
         
-    st.set_page_config("Chat PDF")
+    
     st.header("Curio \n*Learn your way, At your pace*")
     
     with st.sidebar:
